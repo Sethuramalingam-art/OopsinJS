@@ -1,0 +1,69 @@
+How is Object-Oriented Programming implemented in JavaScript? 
+How does it differ from other languages? 
+Can you implement Inheritance in JavaScript?
+
+Unlike other programming languages, JavaScript Does not support Function Overloading.
+
+
+
+tyopeof [] => object
+typeof "" => string
+
+object create 4 ways
+
+1. object literal
+
+let object1 = {
+	x:1,
+	y:2
+}
+
+2. object constructor using new keyword
+
+function vehicle(name,maker,engine){
+    this.name = name;
+    this.maker = maker;
+    this.engine = engine;
+}
+
+// New keyword to create an object
+let car  = new vehicle('GT','BMW','1998cc');
+// Property accessors
+console.log(car.name);
+console.log(car.maker);
+console.log(car['engine']);
+
+
+3. Object.create()
+
+
+const coder = {
+    isStudying : false,
+    printIntroduction : function(){
+        console.log(`My name is ${this.name}. Am I studying?: ${this.isStudying}`);
+    }
+};
+const me = Object.create(coder);
+me.name = 'Mukul';
+me.isStudying = true;
+me.printIntroduction(); // `My name is mukul. Am I studying?: true
+
+4. using es6 classes
+
+ES6 supports class concept like any other Statically typed or object oriented language. So, object can be created out of a class in javascript as well as shown below: 
+class Vehicle {
+  constructor(name, maker, engine) {
+    this.name = name;
+    this.maker =  maker;
+    this.engine = engine;
+  }
+}
+  
+let car1 = new Vehicle('GT', 'BMW', '1998cc');
+  
+console.log(car1.name);  //GT
+
+
+
+4pillars of OOPS
+1.Abstraction
